@@ -1,46 +1,42 @@
 import React, { lazy } from 'react';
-import { BrowserRouter, Route, Switch, Redirect, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 // Component to define private routes
 // import PrivateRoute from '../PrivateRouter/privateRouter';
 
 // Css
 import './../../App.css';
+// Loader
+import Loader from './../../Services/Loader';
 
-// Page containers
+// Api Calls
+import { getSongs, getAlbums } from './../../actions/server';
+
+// Pages
 import Login from './../../Pages/Login';
 import Profile from './../../Pages/Profile';
 import Home from './../../Pages/Home';
-import Loader from './../../Services/Loader';
+import Layout from '../../Layout/Layout';
 
+// App Pages with lazy
 const AlbumDetail = lazy(() => import('./../../Pages/AlbumDetail.js'));
 const Albums = lazy(() => import('./../../Pages/Albums'));
 
+
+
 class Router  extends React.Component {
 
+  async componentDidMount() {
+    this.props.getAlbums();
+    this.props.getSongs();
+  }
+  
   render() {
     return(
       <BrowserRouter>
       <div className="App">
-        <div className="row">
-          <div className="col col-sm-1"><h1>Reactify Web</h1></div>
-          <div className="col co-sm-11">
-            <ul className="nav justify-content-around">
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/login">
-                  {this.props.user.signedIn ? 'Profile' : 'Login'}
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink exact className="nav-link active" activeClassName="active" to="/">Home</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" activeClassName="active" to="/albums">Albums</NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
+        <Layout>
+        {/* Player Musics */}
         <div>
           <div className="row player border border-secondary ">
             <div className="col">
@@ -62,6 +58,7 @@ class Router  extends React.Component {
             {/* <PrivateRoute path="/profile" exact component={Profile}/> */}
             <Redirect to="/" />
           </Switch>
+          </Layout>
         </div>
       </BrowserRouter>
     );
@@ -71,14 +68,20 @@ class Router  extends React.Component {
 }
 const mapStateToProps = (state/*, otherProps */) => {
   return {
-    user: {
-      name: state.user.name,
-      signedIn: state.user.signedIn
-    }
+    // user: {
+    //   name: state.user.name,
+    //   signedIn: state.user.signedIn
+    // },
+    ...state
   }
 }
+const mapDispatchToProps = (dispatch) => ({
+  getSongs: () => dispatch(getSongs()),
+  getAlbums: () => dispatch(getAlbums()),
+});
+
+
 export default connect(
   mapStateToProps,
-  () => ({})
+  mapDispatchToProps,
 )(Router);
-// export default Router;

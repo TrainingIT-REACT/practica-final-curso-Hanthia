@@ -1,12 +1,13 @@
 import React, { Suspense } from "react";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
 export default function (Component) {
     return props => (
       <Suspense fallback={
       <div>
         Cargando... 
-        <FontAwesomeIcon icon={faHome} />
+        <CircularProgress color="secondary" />
        </div>
       }>
         <Component {...props} />

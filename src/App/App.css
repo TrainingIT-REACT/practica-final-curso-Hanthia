@@ -1,6 +1,4 @@
 .App {
-  margin: 3em auto;
-  max-width: 50em;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -22,13 +20,13 @@
 }
 
 .App a {
-  color: #423448;
+  color: #64008f;
   text-decoration:none;
   font-family: 'Baloo Chettan', cursive;
 }
 
 .App a:hover {
-  color: #721796;
+  color: #d37ff5;
   text-decoration:none;
   font-family: 'Baloo Chettan', cursive;
 }
@@ -36,7 +34,7 @@
 ul.albums {
   margin: 0;
   padding: 0;
-  max-height: 50vh;
+  /* max-height: 50vh; */
   overflow-y: auto;
   overflow-x: hidden;
 }

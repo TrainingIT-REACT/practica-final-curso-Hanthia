@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 
 class Album extends Component {
     constructor(props) {
@@ -11,17 +11,16 @@ class Album extends Component {
     
     onAlbum(e) {
         e.preventDefault();
-        //this.props.match history location
         this.props.history.push(`${this.props.match.url}/${this.props.album.id}`);
     }
 
     onPlayAlbum(e) {
         e.preventDefault();
-        console.log('play ', this.props.album.id);
+        console.log('playing ', this.props.album.id);
     }
 
     render() {
-        return <Router>
+        return <BrowserRouter>
             <div className="album row">
                 <a href={`${this.props.match.url}/${this.props.album.name}`} onClick={this.onAlbum}
                    className="d-block p-2 bg-dark text-white col col-sm-10">
@@ -38,7 +37,7 @@ class Album extends Component {
                     </a>
                 </div>
             </div>
-        </Router>    
+        </BrowserRouter>    
     }
 }
 
