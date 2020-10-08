@@ -19,4 +19,4 @@ const SongsList = ({ songs, history, location, match }) => (
   </ul>
 );
 
-export default SongsList; 
+export default SongsList;

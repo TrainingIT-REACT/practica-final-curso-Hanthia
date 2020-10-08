@@ -1,6 +1,6 @@
 // Define list of actions
 const actions = [
-  // All
+  // Todos
   // "ADD_USER_SONG",
   // "ADD_USER_ALBUM",
   // "SERVER_ALBUMS",
@@ -17,8 +17,9 @@ const actions = [
 
 // Convert into Object
 const actionTypes = {};
-actions.forEach(action => {
-  actionTypes[action] = action;
-});
+  actions.forEach(action => {
+    actionTypes[action] = action;
+  });
+
 
 export default actionTypes;

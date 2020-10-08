@@ -10,7 +10,8 @@ import './../../App.css';
 import Loader from './../../Services/Loader';
 
 // Api Calls
-import { getSongs, getAlbums } from './../../actions/server';
+import { getAlbums } from './../../actions/album';
+import { getSongs } from './../../actions/songs';
 
 // Pages
 import Login from './../../Pages/Login';

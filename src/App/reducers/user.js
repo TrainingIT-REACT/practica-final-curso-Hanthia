@@ -1,6 +1,6 @@
 import types from '../actions/types';
 
-// Estado inicial
+// initial state
 const initialState = {
   name: ""
 }

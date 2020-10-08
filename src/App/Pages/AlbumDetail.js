@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongsList from './../Model/SongList';
+import SongsList from '../Model/SongsList';
 
-const AlbumDetail = ({songs, history, location, match}) => {
-  if (songs.isLoading) {
+const AlbumDetail = ({server, history, location, match}) => {
+  if (server.isLoading) {
     return <p>Cargando...</p>
-  } else if (songs.error) {
+  } else if (server.error) {
     return <p>Hubo un error al obtener los datos :(</p>
   } else {
-    return  <SongsList songs={songs.songs} 
+    return  <SongsList songs={server.songs} 
                        history={history}  
                        location={location} 
                        match={match} /> 
