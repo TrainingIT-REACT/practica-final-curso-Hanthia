@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import { connect } from 'react-redux';
-import { signUser } from '../actions/user';
+import { signUser } from './../../actions/user';
 
 const SignUser = ({ signUser }) => {
   const username = createRef();
@@ -16,11 +16,11 @@ const SignUser = ({ signUser }) => {
   return <form onSubmit={onSubmit}>   
     <div className="form-group">
         <label htmlFor="user">Username</label>
-        <input type="text" className="form-control" id="user" placeholder="Username"  ref={username}/>
+        <input type="text" className="form-control" id="user" placeholder="Ej: Belén"  ref={username}/>
     </div>
     <div className="form-group">
         <label htmlFor="password">Password</label>
-        <input type="password" className="form-control" id="password" placeholder="Password"/>
+        <input type="password" className="form-control" id="password" placeholder="Write your password here"/>
     </div>
     <button type="submit" className="btn btn-primary">Login</button>        
   </form>

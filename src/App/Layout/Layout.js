@@ -27,7 +27,7 @@ const styles = theme => ({
 const Layout = ({ classes, children }) => (
   <React.Fragment>
     <CssBaseline />
-    <Navbar />
+    <Navbar/>
     <div className={classes.container}>
       <main className={classes.main}>
         { children }

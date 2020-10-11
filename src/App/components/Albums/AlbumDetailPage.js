@@ -1,22 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SongsList from '../Model/SongsList';
+import SongsList from '../Songs/SongsListModel';
 
-const AlbumDetail = ({server, history, location, match}) => {
-  if (server.isLoading) {
+const AlbumDetail = ({songs, history, location, match}) => {
+  if (songs.isLoading) {
     return <p>Cargando...</p>
-  } else if (server.error) {
+  } else if (songs.hasError) {
     return <p>Hubo un error al obtener los datos :(</p>
   } else {
-    return  <SongsList songs={server.songs} 
-                       history={history}  
+    return  <SongsList history={history}  
                        location={location} 
                        match={match} /> 
   }   
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-    console.log(state);
     return {
       ...state
     }

@@ -1,18 +1,20 @@
 // Define list of actions
 const actions = [
   // Todos
-  // "ADD_USER_SONG",
-  // "ADD_USER_ALBUM",
   // "SERVER_ALBUMS",
   // "SERVER_SONGS",
 
   // Usuarios
   "SIGN_USER",
-  "ADD_USER_ALBUM",
+  "ADD_ALBUM",
+  "ADD_SONG",
   
   //SERVER
   "ALBUMS",
-  "SONGS"
+  "SONGS",
+
+  //PLAYER
+  "PLAY_SONG",
 ];
 
 // Convert into Object

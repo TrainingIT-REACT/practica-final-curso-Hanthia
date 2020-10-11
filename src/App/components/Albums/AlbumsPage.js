@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AlbumList from '../Model/AlbumList';
-
-import { getAlbums } from '../actions/server';
+import AlbumList from './AlbumListModel';
 
 class Albums extends Component {
     renderAlbums() {
-        const { server } = this.props;
+        const { albums } = this.props;
     
-        if (server.isLoading) {
+        if (albums.isLoading) {
           return <p>Cargando...</p>
-        } else if (server.error) {
+        } else if (albums.hasError) {
           return <p>Hubo un error al obtener los datos :(</p>
         } else {
-          return  <AlbumList albums={server.albums} 
+          return  <AlbumList albums={albums.list} 
                     history={this.props.history}  
                     location={this.props.location} 
                     match={this.props.match} /> 
@@ -28,7 +26,6 @@ class Albums extends Component {
 }
 
 const mapStateToProps = (state/*, otherProps */) => {
-  console.log('albums state', state);
   return {
     ...state
   }

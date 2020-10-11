@@ -71,13 +71,14 @@ img.cover {
   font-size: 85%;
   font-style: italic;
   margin-left:20px;
+  width:100%;
 }
 
 .player {
-  text-align: center;
   width: 200px;
   font-size: 30px;
-  margin: auto;
+  margin: 20px auto;
+  text-align: center;
 }
 
 audio{
@@ -97,9 +98,16 @@ audio{
   -webkit-border-radius:7px 7px 7px 7px ;
   border-radius:7px 7px 7px 7px ;
 }
+
 .songs > li {
   margin: 1em 0 0 0;
   list-style-type: none;
+  border-radius: 50px;
+  max-width:200px;
+  margin: 10px 0;
+  -moz-box-shadow: 2px 2px 4px 0px #721796;
+  -webkit-box-shadow:  2px 2px 4px 0px #721796;
+  box-shadow: 2px 2px 4px 0px #721796;
 }
 
 .songs > li > a{
@@ -117,7 +125,6 @@ ul.songs {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
   font-style: italic;
-  width:100%;
 }
 
 .albumDetail {
@@ -129,9 +136,6 @@ img.cover-big {
   border-radius: 50px;
   max-width:200px;
   margin: 10px 0;
-  -moz-box-shadow: 2px 2px 4px 0px #721796;
-  -webkit-box-shadow:  2px 2px 4px 0px #721796;
-  box-shadow: 2px 2px 4px 0px #721796;
 }
 
 .name-detail {
@@ -142,7 +146,7 @@ img.cover-big {
   font-family: 'Open Sans', sans-serif;
   font-size: 85%;
   font-style: italic;
-}
+} 
 
 .btn-primary {
   background-color: #004FA8;

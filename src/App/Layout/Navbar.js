@@ -40,6 +40,7 @@ const Navbar = ({ classes, user }) => (
         <NavLink activeClassName="active" className={classes.link} exact to="/player">Player</NavLink>
        { user ? <NavLink className={classes.link} activeClassName="active" to="/login"> Profile</NavLink> : 
         <NavLink className={classes.link} activeClassName="active" to="/login"> Login</NavLink>}
+        {/* {user.signedIn ? user.name : 'Login'} */}
       </div>
     </Toolbar>
   </AppBar>
