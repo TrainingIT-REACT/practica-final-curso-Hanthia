@@ -16,7 +16,7 @@ const SignUser = ({ signUser }) => {
   return <form onSubmit={onSubmit}>   
     <div className="form-group">
         <label htmlFor="user">Username</label>
-        <input type="text" className="form-control" id="user" placeholder="Ej: Belén"  ref={username}/>
+        <input type="text" className="form-control" id="user" placeholder="Ej: Belén, Luis, etc..."  ref={username}/>
     </div>
     <div className="form-group">
         <label htmlFor="password">Password</label>

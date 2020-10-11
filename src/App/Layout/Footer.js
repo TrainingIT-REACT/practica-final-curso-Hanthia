@@ -12,7 +12,7 @@ const styles = theme => ({
 });
 
 const Footer = ({ classes }) => (
-  <footer className={classes.footer}>
+  <footer className="FooteraApp">
     <Typography variant="h6" align="center" gutterBottom>
      Hanthía Blanco Gil
     </Typography>

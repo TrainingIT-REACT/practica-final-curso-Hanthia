@@ -1,9 +1,5 @@
 // Define list of actions
 const actions = [
-  // Todos
-  // "SERVER_ALBUMS",
-  // "SERVER_SONGS",
-
   // Usuarios
   "SIGN_USER",
   "ADD_ALBUM",

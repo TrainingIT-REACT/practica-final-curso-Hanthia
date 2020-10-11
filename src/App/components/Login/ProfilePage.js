@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Song from '../Songs/SongModel';
-import Album from '../Albums/AlbumModel';
+import Song from '../Songs/Song';
+import Album from '../Albums/Album';
 
 
 class Profile extends Component {

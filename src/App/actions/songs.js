@@ -5,3 +5,4 @@ export const getSongs = createAsyncAction(types.SONGS, async () => {
   const res = await fetch('http://localhost:3001/songs')
   return await res.json();
 });
+
