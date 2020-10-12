@@ -4,7 +4,7 @@ import Song from './Song';
 
 
 const SongsList = ({ songs, history, location, match, albums }) => {
-  const albumId = match.params.id;
+  const albumId = parseInt(match.params.id);
 
   const renderAlbum = (album) => {
     return <Fragment key={album.id}>
@@ -17,12 +17,12 @@ const SongsList = ({ songs, history, location, match, albums }) => {
   return <Fragment key={albumId}>
     <div className="albumDetail">
         {albums.list.map(album => {
-          return album.id == albumId ? renderAlbum(album): '';
+          return album.id === albumId ? renderAlbum(album): '';
         })}
     </div>
     <ul className="list-group">
       {songs.list.map(song => {
-        return song.album_id == albumId ? 
+        return song.album_id === albumId ? 
               <Song key = {song.id.toString()} song={song} 
                     history={history}  
                     location={location}

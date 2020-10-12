@@ -20,7 +20,7 @@ const SignUser = ({ signUser }) => {
     </div>
     <div className="form-group">
         <label htmlFor="password">Password</label>
-        <input type="password" className="form-control" id="password" placeholder="Write your password here"/>
+        <input type="password" className="form-control" id="password" placeholder="Write your password here" autoComplete = "false"/>
     </div>
     <button type="submit" className="btn btn-primary">Login</button>        
   </form>

@@ -28,7 +28,7 @@ class Song extends Component {
     render() {
         return <Fragment key={this.props.song.id}>
             <li key={this.props.song.id} className="list-group-item d-flex justify-content-between align-items-center">
-                <div role="button" onClick={this.onSong}>
+                <div className = "divButtonRol" role="button" onClick={this.onSong}>
                     {this.props.song.name}                  
                 </div>
                 <span className="badge badge-secondary badge-pill">{this.renderTime()}</span>

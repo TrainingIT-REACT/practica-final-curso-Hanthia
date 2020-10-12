@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
 import ReactAudioPlayer from 'react-audio-player';
+import { connect } from 'react-redux';
+
 
 class Player extends Component {
     render() {

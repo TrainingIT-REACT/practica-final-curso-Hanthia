@@ -22,6 +22,9 @@ class App extends Component {
     this.props.getAlbums();
     this.props.getSongs();
   }
+  reloadPages() {
+    window.location.reload();
+  }
 
   render() {
     return(
@@ -34,16 +37,23 @@ class App extends Component {
           <nav className="col co-sm-10">
             <ul className="nav justify-content-around">
               <li className="nav-item">
-              { this.props.user.signedIn ? 
+                { this.props.user.signedIn ? 
                     <NavLink className="nav-link" activeClassName="active" to="/login"> Hola {this.props.user.name}</NavLink>
                   :  <NavLink className="nav-link" activeClassName="active" to="/login"> Login</NavLink>
-                  }
+                }
               </li>
               <li className="nav-item">
                 <NavLink exact className="nav-link active" activeClassName="active" to="/">Home</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" activeClassName="active" to="/albums">Albums</NavLink>
+              </li>
+              
+              <li className="nav-item">
+                { this.props.user.signedIn ?  
+                  <NavLink className="nav-link" activeClassName="active" to = "/"  onClick={() => window.location.reload()}>Sing out</NavLink>
+                  : null
+                }
               </li>
             </ul>
           </nav>
