@@ -2,11 +2,9 @@
   font-family: 'Raleway', sans-serif;
   background-color: rgb(247, 189, 228);
   padding: 0 1% ;
-  
-  
 }
+
 .Typography{
-  border-bottom: solid 1px rgb(248, 102, 199);
   margin-top: 2% ! important;
 }
 .divButtonRol {
@@ -20,8 +18,9 @@
 
 .App nav {
   border-bottom: solid 1px rgb(248, 102, 199);
-  background-color: rgba(248, 102, 199, 0.4);
+  background-color: rgb(241, 179, 216);
   padding-top: 2%;
+  font-size: 20px;
 }
 
 .App nav a {
@@ -30,9 +29,13 @@
   text-decoration:none;
 }
 
+.icon{
+  margin: 2%  ! important;
+}
+
 .App nav a:hover {
   font-family: 'Baloo Chettan', cursive;
-  color: #721796;
+  color: #ffffff;
   text-decoration:none;
 }
 
@@ -43,7 +46,7 @@
 }
 
 .App a:hover {
-  color: #d37ff5;
+  color: #dca3f1;
   text-decoration:none;
   font-family: 'Baloo Chettan', cursive;
 }
@@ -168,10 +171,25 @@ img.cover-big {
   font-size: 85%;
   font-style: italic;
 } 
+.divContenedor {
+  padding: 0 1rem;
+  margin: 1rem;
+}
+.divContenedor > form {
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+}
 
 .btn-primary {
-  background-color: #004FA8;
-  border-color: #004FA8;
+  font-weight: 600;
+  background-color: #721796;
+  border-color: #721796;
+}
+.btn-primary:hover {
+  font-weight: 600;
+  background-color: #dca3f1;
+  border-color: #721796;
 }
 
 ul.albums {

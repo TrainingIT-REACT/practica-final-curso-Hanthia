@@ -13,7 +13,8 @@ const SignUser = ({ signUser }) => {
     username.current.value = '';
   }
 
-  return <form onSubmit={onSubmit}>   
+  return  <div className = "divContenedor">
+     <form onSubmit={onSubmit} className="col-4">   
     <div className="form-group">
         <label htmlFor="user">Username</label>
         <input type="text" className="form-control" id="user" placeholder="Ej: Belén, Luis, etc..."  ref={username}/>
@@ -22,8 +23,10 @@ const SignUser = ({ signUser }) => {
         <label htmlFor="password">Password</label>
         <input type="password" className="form-control" id="password" placeholder="Write your password here" autoComplete = "false"/>
     </div>
-    <button type="submit" className="btn btn-primary">Login</button>        
+    <button type="submit" className="btn btn-primary col-12">Login</button>        
   </form>
+  </div>
+ 
 }
 
 const mapDispatchToProps = (dispatch) => ({

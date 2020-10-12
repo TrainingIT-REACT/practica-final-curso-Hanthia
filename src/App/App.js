@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 import Typography from '@material-ui/core/Typography';
-
+import MusicNote from '@material-ui/icons/MusicNote';
 
 import Player from './components/MusicPlayer/Player';
 import Router from './Routes/Router/Router';
@@ -31,6 +31,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <div className = "row">
+          <MusicNote fontSize="large" className= "icon" />
           <Typography variant="h5" color="inherit" noWrap className = "Typography">
                   <NavLink className="nav-link" activeClassName="active" exact to="/">Reactify Web</NavLink>
           </Typography>
