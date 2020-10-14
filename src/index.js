@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// Polyfills
+import '@babel/polyfill';
 
 ReactDOM.render(
   <main>
