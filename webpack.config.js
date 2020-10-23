@@ -2,13 +2,15 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: [
-    'whatwg-fetch',
-    './src/index.js'
-  ],
+  entry: {
+    // 'whatwg-fetch',
+    main: './src/index.js',
+    vendor: ['react', 'react-dom', 'react-router-dom']
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: "/",
+    filename: '[name].[chunkhash:8].js'
   },
   module: {
     rules: [
@@ -29,6 +31,7 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  devtool: "none",
   devServer: {
     contentBase: './build',
     historyApiFallback: true,
@@ -38,6 +41,21 @@ module.exports = {
       '/songs': 'http://localhost:3001',
       '/images': 'http://localhost:3001',
       '/music': 'http://localhost:3001'
+    }
+  },
+  optimization: {
+    usedExports: true,
+    sideEffects: true,
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: 'vendor',
+          name: 'vendor',
+          enforce: true,
+          chunks: 'all'
+        }
+      }
     }
   }
 }

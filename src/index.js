@@ -5,7 +5,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // Polyfills
-import '@babel/polyfill';
+// import '@babel/polyfill'; deprecate
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 ReactDOM.render(
   <main>
