@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter,  NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
-
-
 import Typography from '@material-ui/core/Typography';
 import MusicNote from '@material-ui/icons/MusicNote';
 
+// Css
+import './App.css';
+
 import Player from './components/MusicPlayer/Player';
 import Router from './Routes/Router/Router';
+import Footer from './Layout/Footer';
 
 import { getAlbums } from './actions/albums';
 import { getSongs } from './actions/songs';
 
-// Css
-import './App.css';
-import Footer from './Layout/Footer';
-
-
-class App extends Component {
+class Application extends Component {
   async componentDidMount() {
     this.props.getAlbums();
     this.props.getSongs();
@@ -87,4 +84,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Application);

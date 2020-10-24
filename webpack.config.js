@@ -4,13 +4,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
     // 'whatwg-fetch',
-    main: './src/index.js',
+    main: './src/index.js', 
     vendor: ['react', 'react-dom', 'react-router-dom']
   },
   output: {
     path: path.resolve(__dirname, 'build'),
+    filename: '[name].[chunkhash:8].js',
     publicPath: "/",
-    filename: '[name].[chunkhash:8].js'
   },
   module: {
     rules: [
@@ -31,7 +31,7 @@ module.exports = {
       filename: "./index.html"
     })
   ],
-  devtool: "none",
+  devtool: "hidden-source-map",
   devServer: {
     contentBase: './build',
     historyApiFallback: true,
