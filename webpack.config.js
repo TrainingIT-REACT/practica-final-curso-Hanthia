@@ -1,13 +1,11 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    // 'whatwg-fetch',
     main: './src/index.js', 
-    sw: './src/sw.js',
     vendor: ['react', 'react-dom', 'react-router-dom']
   },
   output: {
@@ -36,6 +34,14 @@ module.exports = {
     }),
     new WorkboxPlugin.InjectManifest({
       swSrc: './src/sw.js',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: '' },
+      ],
+      options: {
+        concurrency: 100,
+      },
     })
   ],
   devtool: "hidden-source-map",

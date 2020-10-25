@@ -12,7 +12,7 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <!-- <link rel="manifest" crossorigin="use-credentials" href="manifest.json"> -->
+    <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Germania+One|Open+Sans|Playfair+Display|Raleway|Saira+Extra+Condensed|ZCOOL+XiaoWei" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -25,10 +25,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Reactify HBG</title>
+    <style>
+      #updateApplication {
+        background-color: rgba(0, 0, 0, .7);
+        bottom: 2em;
+        box-shadow: 0px 6px 10px -5px rgba(0, 0, 0, .5);
+        border-radius: 5px;
+        color: white;
+        /* display: none; */
+        font-size: .9em;
+        left: 2em;
+        position: absolute;
+        padding: 1em;
+      }
+      #updateApplication.show {
+        display: block;
+      }
+      #reload {
+        margin: 0 0 0 1em;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" class="container-fluid"></div>
+    <div id="root" class="container-fluid">
+      <!-- <div id="updateApplication">
+        Hay una nueva versión de esta aplicación
+        <button id="reload" class="button-primary">Recargar</button>
+      </div> -->
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -14,5 +14,11 @@ precacheAndRoute(self.__WB_MANIFEST);
     console.log('activado');
     return self.clients.claim();
   });
+
+  self.addEventListener('message' ,(e) => {
+    if(e.data.action == 'skipWaiting'){
+      self.skipWaiting();
+    }
+  })
   
 
