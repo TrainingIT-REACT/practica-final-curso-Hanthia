@@ -13,7 +13,9 @@ Puedes ver los distintos parámetros en el fichero `./server/data.json`. A prior
 
 El proyecto se inicia directamente con `yarn start`.
 
-Este comando hace uso de `npm-run-all` que ejecuta el servidor y el cliente al mismo tiempo. El servidor estará escuchando en el puerto 3001 y la aplicación en el 3000. No obstante, la aplicación ya viene preconfigurada con un proxy que redirige cualquier llamada al servidor. Por ejemplo:
+Este comando hace uso de `npm-run-all` que ejecuta el servidor y el cliente al mismo tiempo.
+Para más información mirar la parte de script del package.json
+ El servidor estará escuchando en el puerto 3001 y la aplicación en el 3000. No obstante, la aplicación ya viene preconfigurada con un proxy que redirige cualquier llamada al servidor. Por ejemplo:
 
 ```/albums -> http://localhost:3001/albums```
 
