@@ -1,5 +1,4 @@
-﻿/* eslint-disable no-undef, no-restricted-globals */
-import {precacheAndRoute} from 'workbox-precaching';
+﻿/* eslint-disable no-undef, no-restricted-globals*/
 
 // Wait for the "install" event to confirm that the service-worker has been installed.
 self.addEventListener('install', (event) => {
@@ -7,7 +6,7 @@ self.addEventListener('install', (event) => {
   });
 
 // Don't need to Intercept the requests. Instead we call the workbox method
-precacheAndRoute(self.__WB_MANIFEST);
+workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
   
   // Activate event
   self.addEventListener('activate', (e) => {

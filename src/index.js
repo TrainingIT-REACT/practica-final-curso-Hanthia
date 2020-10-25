@@ -40,7 +40,7 @@ if ('serviceWorker' in navigator) {
   // Esperamos a que cargue la web
   window.addEventListener('load', () => {
     // Intentamos instalar el Service worker
-    navigator.serviceWorker.register('./sw.js').then((registration) => {
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
       // Se ha registrado correctamente
       console.log('El service worker SW se ha registrado correctamente: ', registration.scope);
 
